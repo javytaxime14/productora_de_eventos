@@ -1,0 +1,53 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @group.name %>
+</p>
+
+<p>
+  <strong>Members number:</strong>
+  <%= @group.members_number %>
+</p>
+
+<p>
+  <strong>Debut:</strong>
+  <%= @group.debut %>
+</p>
+
+<p>
+  <strong>Group class:</strong>
+  <%= @group.group_class %>
+</p>
+
+<p>
+  <strong>Concerts:</strong>
+  <%= @group.concerts.count %>
+</p>
+
+
+<table class="table table-bordered">
+  <thead class="table-success">
+    <tr>
+      <th>Current Month Concerts</th>
+      <th>Last Concert</th>
+      <th>Maximum attendance (people)</th>
+      <th>Longest concert (duration in hours)</th>
+    </tr>
+  </thead>
+
+  <tbody>
+      <tr>
+      <td><%= @group.currentMonthConcert %></td>
+        <td><%= @group.lastConcert %></td>
+        <td><%= @group.maximumAttendance %></td>
+        <td><%= @group.longestConcert%></td>
+      </tr>
+  </tbody>
+</table>
+
+
+
+
+<%= link_to 'Edit', edit_group_path(@group) %> |
+<%= link_to 'Back', groups_path %>
